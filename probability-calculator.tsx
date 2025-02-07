@@ -115,6 +115,9 @@ export default function ProbabilityCalculator() {
             <Label htmlFor="deckSize">Deck Size</Label>
             <Input
               id="deckSize"
+              type="number"
+              min={40}
+              max={60}
               value={deckSize}
               onChange={(e) => setDeckSize(Number(e.target.value))}
             />
@@ -123,6 +126,8 @@ export default function ProbabilityCalculator() {
             <Label htmlFor="handSize">Hand Size</Label>
             <Input
               id="handSize"
+              type="number"
+              min={1}
               value={handSize}
               onChange={(e) => setHandSize(Number(e.target.value))}
             />
@@ -165,6 +170,9 @@ export default function ProbabilityCalculator() {
                   </TableCell>
                   <TableCell>
                     <Input
+                      type="number"
+                      min={1}
+                      max={3}
                       value={card.amount}
                       onChange={(e) => updateCardRequirement(card.id, "amount", Number(e.target.value))}
                       className="w-16"
@@ -172,6 +180,7 @@ export default function ProbabilityCalculator() {
                   </TableCell>
                   <TableCell>
                     <Input
+                      type="number"
                       min={0}
                       max={card.amount}
                       value={card.min}
@@ -181,6 +190,7 @@ export default function ProbabilityCalculator() {
                   </TableCell>
                   <TableCell>
                     <Input
+                      type="number"
                       min={card.min}
                       max={card.amount}
                       value={card.max}
