@@ -115,22 +115,16 @@ export default function ProbabilityCalculator() {
             <Label htmlFor="deckSize">Deck Size</Label>
             <Input
               id="deckSize"
-              type="number"
-              min={40}
-              max={60}
               value={deckSize}
-              onChange={(e) => setDeckSize(Math.max(40, Math.min(60, Number(e.target.value))))}
+              onChange={(e) => setDeckSize(Number(e.target.value))}
             />
           </div>
           <div className="space-y-2">
             <Label htmlFor="handSize">Hand Size</Label>
             <Input
               id="handSize"
-              type="number"
-              min={1}
-              max={7}
               value={handSize}
-              onChange={(e) => setHandSize(Math.max(1, Math.min(7, Number(e.target.value))))}
+              onChange={(e) => setHandSize(Number(e.target.value))}
             />
           </div>
         </div>
@@ -171,9 +165,6 @@ export default function ProbabilityCalculator() {
                   </TableCell>
                   <TableCell>
                     <Input
-                      type="number"
-                      min={1}
-                      max={3}
                       value={card.amount}
                       onChange={(e) => updateCardRequirement(card.id, "amount", Number(e.target.value))}
                       className="w-16"
@@ -181,7 +172,6 @@ export default function ProbabilityCalculator() {
                   </TableCell>
                   <TableCell>
                     <Input
-                      type="number"
                       min={0}
                       max={card.amount}
                       value={card.min}
@@ -191,7 +181,6 @@ export default function ProbabilityCalculator() {
                   </TableCell>
                   <TableCell>
                     <Input
-                      type="number"
                       min={card.min}
                       max={card.amount}
                       value={card.max}
